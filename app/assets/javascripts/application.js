@@ -13,3 +13,19 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap-sprockets
+//= require jquery
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require bootstrap
+
+
+$(document).ready(function() {
+    $('#usuariosTable').DataTable();
+    $('#perfisTable').DataTable();
+
+    $('#myTab').click(function (e) {
+	 	e.preventDefault()
+	  	$(this).tab('show')
+	});
+});
