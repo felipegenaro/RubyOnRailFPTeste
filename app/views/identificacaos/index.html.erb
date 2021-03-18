@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Identificacaos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Data</th>
+      <th>Public</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @identificacaos.each do |identificacao| %>
+      <tr>
+        <td><%= identificacao.name %></td>
+        <td><%= identificacao.description %></td>
+        <td><%= identificacao.data %></td>
+        <td><%= identificacao.public_id %></td>
+        <td><%= link_to 'Show', identificacao %></td>
+        <td><%= link_to 'Edit', edit_identificacao_path(identificacao) %></td>
+        <td><%= link_to 'Destroy', identificacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Identificacao', new_identificacao_path %>
